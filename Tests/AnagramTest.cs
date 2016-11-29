@@ -50,5 +50,17 @@ namespace TheAnagram.Objects
       expectedReturn.Add("Bared");
       Assert.Equal(expectedReturn, newWord.IsAnagram());
     }
+
+    [Fact]
+    public void IsAnagram_ForPartialMatches_HatPaths()
+    {
+      Anagram newWord = new Anagram("Hatp");
+      newWord.AddToPotentialList("Hat");
+      newWord.AddToPotentialList("Paths");
+      List<string> expectedReturn = new List<string>{};
+      expectedReturn.Add("Hat");
+      expectedReturn.Add("Paths");
+      Assert.Equal(expectedReturn, newWord.IsAnagram());
+    }
   }
 }

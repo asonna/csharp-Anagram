@@ -7,16 +7,19 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="jumbotron">
+				<h1>ANAGRAM CHECKER</h1>
+			</div><br><br>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 divs">
 					<form action="/result" method="post">
 						<label for="originalWord">Original Word</label>
-						<input type="text" name="originalWord" placeholder="Original Word">
+						<input type="text" name="originalWord" class="form-control" placeholder="Original Word"><br>
 						<label for="potentialAnagrams">Potential Anagrams</label>
 						<input type="text" name="anagram1" placeholder="Potential Anagram #1">
 						<input type="text" name="anagram2" placeholder="Potential Anagram #2">
-						<input type="text" name="anagram3" placeholder="Potential Anagram #3">
-						<button type="submit">Check For Anagrams</button>
+						<input type="text" name="anagram3" placeholder="Potential Anagram #3"><br><br>
+						<button type="submit" class="btn btn-primary">Check For Anagrams</button>
 					</form>
 				</div>
 			</div>
