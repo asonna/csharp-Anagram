@@ -6,13 +6,19 @@ namespace TheAnagram.Objects
 {
 	public class Anagram
 	{
-		private List<char> _letters = new List<char>{};
+		private List<string> _letters = new List<string>{};
+		private string _originalWord;
 		private List<string> _potentialAnagrams = new List<string>{};
 		private static List<string> _allWords = new List<string>{};
 
 		public Anagram(string word)
 		{
-			_letters = word.ToUpper().ToCharArray().ToList();
+			_originalWord = word;
+			Char[] charArray = word.ToUpper().ToCharArray();
+			foreach (char letter in charArray)
+			{
+				_letters.Add(letter.ToString());
+			}
 			_letters.Sort();
 		}
 
@@ -26,30 +32,43 @@ namespace TheAnagram.Objects
 			return _potentialAnagrams;
 		}
 
-		public bool IsAnagram()
+		public List<string> IsAnagram()
 		{
-			bool isAnagram = true;
-			List<char> newWordLetters = _potentialAnagrams[0].ToUpper().ToCharArray().ToList();
-			if (newWordLetters.Count != _letters.Count)
+			List<string> anagramList = new List<string>{};
+
+			foreach (string word in _potentialAnagrams)
 			{
-				isAnagram = false;
-				return isAnagram;
-			}
-			else
-			{
-				newWordLetters.Sort();
-				for (int index = 0; index < _letters.Count; index++)
+				List<string> newWordLetters = new List<string>{};
+				Char[] charArray = word.ToUpper().ToCharArray();
+				foreach (char letter in charArray)
 				{
-					if (_letters[index] != newWordLetters[index])
+					newWordLetters.Add(letter.ToString());
+				}
+
+				if (newWordLetters.Count == _letters.Count)
+				{
+					string tempWord = "";
+					foreach (string letter in newWordLetters)
 					{
-						Console.WriteLine(_letters.Count);
-						Console.WriteLine(newWordLetters.Count);
-						isAnagram = false;
-						break;
+						tempWord += letter;
+					}
+					newWordLetters.Sort();
+					bool isAnagram = true;
+					for (int index = 0; index < _letters.Count; index++)
+					{
+						if (_letters[index] != newWordLetters[index])
+						{
+							isAnagram = false;
+							break;
+						}
+					}
+					if (isAnagram)
+					{
+						anagramList.Add(tempWord);
 					}
 				}
-				return isAnagram;
 			}
+			return anagramList;
 		}
 	}
 }
