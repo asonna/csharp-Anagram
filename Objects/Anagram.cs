@@ -39,7 +39,7 @@ namespace TheAnagram.Objects
 			foreach (string word in _potentialAnagrams)
 			{
 				List<string> newWordLetters = new List<string>{};
-				Char[] charArray = word.ToUpper().ToCharArray();
+				Char[] charArray = word.ToCharArray();
 				foreach (char letter in charArray)
 				{
 					newWordLetters.Add(letter.ToString());
@@ -56,7 +56,7 @@ namespace TheAnagram.Objects
 					bool isAnagram = true;
 					for (int index = 0; index < _letters.Count; index++)
 					{
-						if (_letters[index] != newWordLetters[index])
+						if (_letters[index] != newWordLetters[index].ToUpper())
 						{
 							isAnagram = false;
 							break;
@@ -69,6 +69,11 @@ namespace TheAnagram.Objects
 				}
 			}
 			return anagramList;
+		}
+
+		public string GetWord()
+		{
+			return _originalWord;
 		}
 	}
 }
