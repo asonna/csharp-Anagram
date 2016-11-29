@@ -1,8 +1,8 @@
 using Nancy;
 using System.Collections.Generic;
-using NameSpace.Objects;
+using TheAnagram.Objects;
 
-namespace NameSpace
+namespace TheAnagram
 {
 	public class HomeModule : NancyModule
 	{
