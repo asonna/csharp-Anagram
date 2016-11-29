@@ -13,11 +13,12 @@ input {
 
 a {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 20px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: green;
-  color: blue;
+  background-color: yellow;
+  color: maroon;
+  padding: 5px;
 }
 
 ul{
@@ -25,7 +26,7 @@ ul{
 }
 
 a:hover {
-  color: green;
+  color: lightblue;
   background-color: blue;
   text-decoration: none;
 }
