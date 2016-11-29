@@ -12,7 +12,7 @@ namespace TheAnagram.Objects
       Anagram newWord = new Anagram("Bread");
       newWord.AddToPotentialList("Beard");
       List<string> expectedReturn = new List<string>{};
-      expectedReturn.Add("BEARD");
+      expectedReturn.Add("Beard");
       Assert.Equal(expectedReturn, newWord.IsAnagram());
     }
 
@@ -23,7 +23,7 @@ namespace TheAnagram.Objects
       newWord.AddToPotentialList("beard");
       newWord.AddToPotentialList("bottle");
       List<string> expectedReturn = new List<string>{};
-      expectedReturn.Add("BEARD");
+      expectedReturn.Add("beard");
       Assert.Equal(expectedReturn, newWord.IsAnagram());
     }
 
@@ -45,9 +45,9 @@ namespace TheAnagram.Objects
       newWord.AddToPotentialList("Debra");
       newWord.AddToPotentialList("Bared");
       List<string> expectedReturn = new List<string>{};
-      expectedReturn.Add("BEARD");
-      expectedReturn.Add("DEBRA");
-      expectedReturn.Add("BARED");
+      expectedReturn.Add("beard");
+      expectedReturn.Add("Debra");
+      expectedReturn.Add("Bared");
       Assert.Equal(expectedReturn, newWord.IsAnagram());
     }
   }

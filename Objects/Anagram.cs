@@ -9,7 +9,6 @@ namespace TheAnagram.Objects
 		private List<string> _letters = new List<string>{};
 		private string _originalWord;
 		private List<string> _potentialAnagrams = new List<string>{};
-		private static List<string> _allWords = new List<string>{};
 
 		public Anagram(string word)
 		{
@@ -45,9 +44,9 @@ namespace TheAnagram.Objects
 					newWordLetters.Add(letter.ToString());
 				}
 
+				string tempWord = "";
 				if (newWordLetters.Count == _letters.Count)
 				{
-					string tempWord = "";
 					foreach (string letter in newWordLetters)
 					{
 						tempWord += letter;
@@ -66,6 +65,27 @@ namespace TheAnagram.Objects
 					{
 						anagramList.Add(tempWord);
 					}
+				}
+				else
+				{
+					// string originalWordSorted = "";
+					// string tempWordUpper = "";
+					// foreach (string letter in _letters)
+					// {
+					// 	originalWordSorted += letter.ToUpper();
+					// }
+					// foreach (string letter in newWordLetters)
+					// {
+					// 	tempWord += letter;
+					// }
+					// tempWordUpper = tempWord.ToUpper();
+					// System.Console.WriteLine(tempWord);
+					// System.Console.WriteLine(tempWordUpper);
+					// System.Console.WriteLine(originalWordSorted);
+					// if (originalWordSorted.Contains(tempWord) || tempWord.Contains(originalWordSorted))
+					// {
+					// 	anagramList.Add(tempWord);
+					// }
 				}
 			}
 			return anagramList;

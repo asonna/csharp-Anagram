@@ -1,9 +1,9 @@
-#{Project Title}
+#ANAGRAM
 ===========================
 
-_{Brief Details}, {Date}_
+_Enter original word, then potential anagram and submit to return anagram match if any. 11/29/2016_
 
-_By Levi Bibo_
+_By Annie Sonna and Levi Bibo_
 
 ##Description
 
@@ -15,7 +15,7 @@ _[Link to site.](https://levibibo.github.io/{site-name})_
 
 * _Spec1: Check a word again another word
 * _Input: BREAD, BEARD
-* _Output: true
+* _Output: BEARD
 
 * _Spec2: Check a word again list of words with a single match
 * _Input: BREAD, BEARD, BOTTLE
@@ -41,4 +41,4 @@ _This site was built using {technologies}_
 
 _Created under an MIT license._
 
-_Copyright (c) {2016} Levi Bibo_
+_Copyright (c) {2016} Annie Sonna and Levi Bibo_
